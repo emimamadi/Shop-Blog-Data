@@ -143,7 +143,7 @@ export default function index() {
 <Dropdown.Item key={zo.id} className="bg-slate-400">{zo.title} , ${zo .price}</Dropdown.Item>
   ))
 }
-<Link href="/pr/Checkout" className="btn bg-yellow-300 flex justify-center my-1 rounded-xl">Check out</Link>
+<Link href="/product/Checkout" className="btn bg-yellow-300 flex justify-center my-1 rounded-xl">Check out</Link>
 <Dropdown.Divider />
 
      
@@ -160,7 +160,7 @@ export default function index() {
           Home
         </Navbar.Link>
         {/* <Navbar.Link href="/shop">Shop</Navbar.Link> */}
-        <Navbar.Link href="/pr">Product</Navbar.Link>
+        <Navbar.Link href="/product">Product</Navbar.Link>
         <Navbar.Link href="/post">Post</Navbar.Link>
         <Navbar.Link href="#">Contact</Navbar.Link>
         <Navbar.Link href="#">About</Navbar.Link>
