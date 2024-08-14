@@ -27,49 +27,13 @@ const ProductDetails = ({ params }: { params: { id: number } }) => {
 
   const pr = Object.values(data);
 
-  // console.log(pr);
-
-  // setProduct(data)
-
-  //    const data=await fetch(`products/${id}`)
-
-  //    const pr=data.json()
-
-  //    console.log(pr)
-
-  //   const [product, setProduct] = useState<Product | null>(null);
-
-  //Fetch details for the specified productID
-  //   const fetchProductDetails = async () => {
-  //     try {
-  //     //   const response = await fetch(`https://dummyjson.com/products/${id}`);
-
-  //     console.log("id = ", id)
-
-  //         console.log("product = ",product)
-  //     //   const data = await response.json();
-  //     //   setProduct(product);
-  //     } catch (error) {
-  //       console.log(error, "error while fetching data");
-  //     }
-  //   };
-
-  //   useEffect(() => {
-  //     fetchProductDetails();
-  //   }, [id]);
-
-  // if (!data) {
-  //   return (
-  //     <div>
-  //       <h2>Product Not Found</h2>
-  //     </div>
-  //   );
-  // }
-
   return (
     <>
       {pr.map((item) => (
-        <div className="md:flex md:flex-row gap-5 mt-10 mx-20 sm:flex sm:flex-col" key={id}>
+        <div
+          className="md:flex md:flex-row gap-5 mt-10 mx-20 sm:flex sm:flex-col"
+          key={id}
+        >
           <img
             className="h-[75vh] w-1/2  shadow-2xl rounded-3xl"
             src={item.images[0]}
@@ -99,16 +63,6 @@ const ProductDetails = ({ params }: { params: { id: number } }) => {
         </div>
       ))}
     </>
-
-    // {product.map((item:any)=>
-    //     <div>
-    //     <p>{item.title}</p>
-    //     <p>{item.price}</p>
-    //     <p>{item.category}</p>
-    //   </div>
-    // )}
-
-    // <p>{data.title}</p>
   );
 };
 

@@ -6,7 +6,11 @@ import ReactSlider from "react-slider";
 
 import { useAppSelector, useAppDispatch } from "@/redux/store";
 
-import { searchProduct, priceProduct ,categoryProduct } from "@/redux/productSlice";
+import {
+  searchProduct,
+  priceProduct,
+  categoryProduct,
+} from "@/redux/productSlice";
 
 import "./style.scss";
 
@@ -17,7 +21,7 @@ const MAX = 2000;
 export default function SearchFilter() {
   const [values, setValues] = useState([MIN, MAX]);
 
-  const category=["smartphones","laptops","fragrances","skincare"]
+  const category = ["smartphones", "laptops", "fragrances", "skincare"];
 
   // const handleChange = (values: any) => setValues(values);
 
@@ -28,12 +32,10 @@ export default function SearchFilter() {
 
   // console.log(values);
 
-   const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <ul className="flex flex-col gap-2 min-w-[300px] min-h-screen mt-5 rounded shadow-2xl border border-gray-200 pt-10 outline-none">
-   
-
       <input
         type="search"
         name="search"
@@ -84,58 +86,25 @@ export default function SearchFilter() {
 
           <article className="px-4 pb-4">
             <ul className="flex flex-col gap-1 pl-2">
-
-          {
-            category.map((item,index)=>(
-              <li key={index}>
-              <input
-                id={item}
-                type="checkbox"
-                value={item}
-                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                onChange={(e:any)=>dispatch(categoryProduct(e.target.value))}
-             />
-              <label
-                htmlFor={item}
-                className="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >
-               {item}
-              </label>
-            </li>
-            ))
-          }
-
-              {/* <li>
-                <input
-                  id="electronic-checkbox"
-                  type="checkbox"
-                  value=""
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                />
-                <label
-                  htmlFor="electronic-checkbox"
-                  className="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  Electronic
-                </label>
-              </li>
-              <li>
-                <input
-                  id="smartphone-checkbox"
-                  type="checkbox"
-                  value=""
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
-                />
-                <label
-                  htmlFor="smartphone-checkbox"
-                  className="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >
-                  smartphone
-                </label>
-              </li> */}
-              {/* <li>
-                <a href="">Document title</a>
-              </li> */}
+              {category.map((item, index) => (
+                <li key={index}>
+                  <input
+                    id={item}
+                    type="checkbox"
+                    value={item}
+                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                    onChange={(e: any) =>
+                      dispatch(categoryProduct(e.target.value))
+                    }
+                  />
+                  <label
+                    htmlFor={item}
+                    className="w-full py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                  >
+                    {item}
+                  </label>
+                </li>
+              ))}
             </ul>
           </article>
         </details>

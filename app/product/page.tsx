@@ -44,35 +44,6 @@ export default function page() {
 
   const cart = useAppSelector((state) => state.Cart.cart);
 
-  // let pl = [] || {};
-
-  // console.log(
-  //   "Cart == > ",
-  //   Object.values(cart).map((vb: any) => vb)
-  // );
-
-  // for (let i = 0; i < cart.length; i++) {
-  //   console.log(`i=====> ${i}`, Object.values(cart)[i]);
-
-  //   console.log("JAFAR === >", Object.values(Object.values(cart)[i] || {})[0]);
-
-  //   let uu = Object.values(Object.values(cart)[i] || {})[0] || {};
-
-  //   //  console.log("UUUUUU====>",uu)
-
-  //   // Object.values(uu).map((vo:any)=>console.log("TITle ===> ",vo) )
-
-  //   console.log("Type of UU==>", typeof uu);
-  // }
-
-  // const Result = Object.values(cart)
-  //   .flatMap((x: any) => x.item)
-  //   .map((s: any) => s);
-
-  // console.log("Result flatmap ====> ", Result);
-
-  // const Taghi=Object.keys(cart).flatMap((r)=>(cart[r].item))
-
   const Taghi = Object.values(cart).flatMap((r: any) => r);
 
   // const Shamsi=Object.keys(Taghi).flatMap((cc:any)=>Taghi[cc])
@@ -101,44 +72,10 @@ export default function page() {
 
   console.log("ZN ===>", zn);
 
-  // console.log("Shamsi  ===> ", Shamsi)
-
-  // Object.values(cart).forEach((ele:any) => {
-  //   console.log("ele ===>", ele.item);
-
-  //  const xg=ele.item
-
-  //   // Object.values(ele).forEach((ci)=>
-
-  //   //   console.log(ci)
-
-  //   //   pl.push(ele)
-
-  //   // pl.push(ele)
-
-  //   // console.log("PL====> ", pl)
-  // });
-
-  // console.log("xg======> " , xg)
-
-  // pl=item
-
-  // console.log("ITEM === > ", Object.values(pl).map((xo:any)=>xo))
-
   const truncateString = (str: string, num: number) =>
     str.length > num ? str.slice(0, num) : str;
 
   truncateString("boomerang", 6); // 'boomer'
-
-  // async function GetProducts() {
-  //   const res:[] = await getAllProducts();
-
-  //   // console.log(res)
-
-  //   if (res) {
-  //     setProducts(res);
-  //   }
-  // }
 
   const [isClient, setIsClient] = useState(false);
 
@@ -151,104 +88,6 @@ export default function page() {
 
     //  dispatch(searchProduct(e.target.value))
   }, []);
-
-  // console.log("value = ", data);
-
-  // <FetchProduct/>
-
-  // let productArray: [] = await getData();
-
-  // let value;
-
-  // const count = useAppSelector(selectProduct)
-
-  // const handleSearch=(e:any)=>{
-
-  //   dispatch(searchProduct(e.target.value))
-
-  // }
-
-  // const [value,setValue]=useState(50)
-
-  // const handleRange=(e:any)=>{
-  //   "use client"
-  //   setValue(e.target.value)
-  //   console.log(value)
-  // }
-
-  // console.log(productArray);
-
-  // const productSearch = useAppSelector((state) => state.Products);
-
-  // console.log(productSearch)
-
-  // localStorage.setItem("mamad","akbar")
-
-  // if (typeof window !== "undefined") {
-  //   console.log("local storage = ", window.localStorage);
-
-  //   console.log("local storage 00000000 ==== ", localStorage.getItem("cart"));
-
-  //   console.log(
-  //     "local storage 00000000 ==== Type OF=== ",
-  //     typeof localStorage.getItem("cart")
-  //   );
-
-  //   // console.log("local sotrage cart 66666666 == " , JSON.parse(localStorage.getItem("cart"))
-
-  //   //  console.log("  1  ===  ",JSON.parse(JSON.stringify(localStorage.getItem("cart"))))
-
-  //   //  console.log("  2 ===  ",JSON.stringify(JSON.stringify(localStorage.getItem("cart"))))
-
-  //   console.log(
-  //     "local storage cart  11111111= ",
-  //     localStorage.getItem("cart")?.split(",")
-  //   );
-
-  //   // console.log("local storage cart = " , localStorage.getItem("cart")?.split(","))
-
-  //   let mo = localStorage.getItem("cart");
-
-  //   console.log("local storage cart 2222 = ", typeof mo);
-
-  //   console.log(
-  //     "local storage cart  55555555555555555= ",
-  //     localStorage.getItem("cart")?.split(",")[0].split(" ")
-  //   );
-
-  //   console.log(
-  //     "local storage cart 6666666666666666 = ",
-  //     localStorage.getItem("cart")?.split(",")[0]
-  //   );
-
-  //   console.log(
-  //     "local storage cart 777777777777777777777 = ",
-  //     JSON.parse(localStorage.getItem("cart") || "0")
-  //   );
-
-  //   let x = JSON.parse(localStorage.getItem("cart") || "0");
-
-  //   console.log(
-  //     "Extract data ===",
-
-  //     Object.values(x).map((x: any) => x)
-  //   );
-
-  //   let op = Object.values(x).map((we: any) => we.item);
-
-  //   // for(let i =0 ; i<=op.length; i++){
-
-  //   //   console.log("Object Maker ===> ", Object.values(op).map((k:{id:number,title:string})=>k.title));
-  //   // }
-
-  //   console.log("OP ==== > ");
-
-  //   // for(let i=1 ; i<op.length; i++){
-  //   //   for(let y =1 ; y < op.length; y++){
-  //   //     console.log("LOOPP  ==== > ", op[i][y])
-  //   //   }
-  //   // }
-  // }
 
   return (
     <div className="flex  mx-5">
@@ -266,7 +105,7 @@ export default function page() {
                 <Link href={`/pr/${ProductItem.id}`}>
                   <img
                     className="p-8 rounded-t-lg w-60 h-60 mx-auto"
-                    src={ProductItem.images[0]}
+                    src={ProductItem.images[1]}
                     alt="product image"
                   />
                 </Link>
@@ -384,7 +223,7 @@ export default function page() {
                 <Link href={`/pr/${ProductItem.id}`}>
                   <img
                     className="p-8 rounded-t-lg w-60 h-60 mx-auto"
-                    src={ProductItem.images[0]}
+                    src={ProductItem.images[1]}
                     alt="product image"
                   />
                 </Link>

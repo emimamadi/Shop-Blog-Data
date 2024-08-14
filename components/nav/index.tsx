@@ -8,23 +8,26 @@ import Link from "next/link";
 export default function index() {
   var QTY = [];
 
-  var az=[]
+  var az = [];
 
   var cart = useAppSelector((state) => state.Cart.cart);
 
   const item = Object.values(cart).flatMap((mk: any) => mk);
   for (let mo = 1; mo < Object.values(item).length; mo++) {
     // QTY += Object.values(item)[mo]["qty"];
-    QTY.push(Object.values(item)[mo]["qty"])
+    QTY.push(Object.values(item)[mo]["qty"]);
 
-    az.push({id:Object.values(item)[mo]["id"],"title":Object.values(item)[mo]["title"],"price":Object.values(item)[mo]["price"]})
+    az.push({
+      id: Object.values(item)[mo]["id"],
+      title: Object.values(item)[mo]["title"],
+      price: Object.values(item)[mo]["price"],
+    });
   }
-  let q=QTY.reduce(getSum,0)
+  let q = QTY.reduce(getSum, 0);
 
-  function getSum(total:any, num:any) {
+  function getSum(total: any, num: any) {
     return total + Math.round(num);
   }
-
 
   const [isClient, setIsClient] = useState(false);
 
@@ -32,37 +35,15 @@ export default function index() {
     setIsClient(true);
   }, []);
 
-
-  // const GetItems=(items:any)=>{
-
-  //   // const cart = useAppSelector((state) => state.Cart.cart);
-
-   
-  //   //  {
-  //   //   QTY += Object.values(item)[mo]["qty"];
-  //   // }
-  //   let x = [];
-
-  //   var item = Object.values(cart).flatMap((mk: any) => mk);
-  //   for (let mo = 1; mo < Object.values(item).length; mo++) {
-  //     var item = Object.values(item)[mo]["title"];
-
-      
-  //     x.push(<Dropdown.Item>{item}</Dropdown.Item>);
-  //   }
-  //   return x;
-  // };
-
-  // return <ul>{GetItems(items)}</ul>;
-
-  // const cart = useAppSelector((state) => state.Cart.cart);
-
   console.log("QTY ====================================> ", QTY);
 
   console.log("QTY ====================================> ", q);
 
   return (
-    <Navbar rounded className="shadow-md shadow-gray-100 sticky top-0 mx-5 mt-5 z-10 ">
+    <Navbar
+      rounded
+      className="shadow-md shadow-gray-100 sticky top-0 mx-5 mt-5 z-10 "
+    >
       <Navbar.Brand href="https://flowbite-react.com">
         <img
           src="/favicon.ico"
@@ -70,7 +51,7 @@ export default function index() {
           alt="Flowbite React Logo"
         />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Flowbite React
+          Soroush
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2 relative">
@@ -97,56 +78,20 @@ export default function index() {
             </span>
           </Dropdown.Header>
 
+      
+          {az.map((zo: any) => (
+            <Dropdown.Item key={zo.id} className="bg-slate-400">
+              {zo.title} , ${zo.price}
+            </Dropdown.Item>
+          ))}
+          <Link
+            href="/product/Checkout"
+            className="btn bg-yellow-300 flex justify-center my-1 rounded-xl"
+          >
+            Check out
+          </Link>
+          <Dropdown.Divider />
 
-
- {
-
-  
-//   for (var mo = 1; mo < Object.values(item:any).length; mo++) {
-
-//     <Dropdown.Item> {Object.values(item)[mo]["title"] }|| {Object.values(item)[mo]["qty"]} </Dropdown.Item>
-  
- 
-  
-
-  
-
-// } 
-
-}
-
-
-
-     
-
-    {/* item = Object.values(cart).flatMap((mk: any) => mk);
-     for (let mo = 1; mo < Object.values(item).length; mo++) {
-       QTY += Object.values(item)[mo]["qty"];
-     } */}
-
-
-    
-
-
-  
-
-{
-
-  // Object.values((item:any)=>
-  
-  //   <Dropdown.Item>{item[2]["title"]}</Dropdown.Item>)
-}
-
-
-{
-  az.map((zo:any)=>(
-<Dropdown.Item key={zo.id} className="bg-slate-400">{zo.title} , ${zo .price}</Dropdown.Item>
-  ))
-}
-<Link href="/product/Checkout" className="btn bg-yellow-300 flex justify-center my-1 rounded-xl">Check out</Link>
-<Dropdown.Divider />
-
-     
           <Dropdown.Item>Dashboard</Dropdown.Item>
           <Dropdown.Item>Settings</Dropdown.Item>
           <Dropdown.Item>Earnings</Dropdown.Item>

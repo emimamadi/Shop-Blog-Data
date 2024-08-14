@@ -1,8 +1,6 @@
-"use client"
+"use client";
 
 import React, { useEffect } from "react";
-
-
 
 import CardPost from "@/components/CardPost";
 
@@ -23,36 +21,7 @@ type A = {
   body: string;
 };
 
-// export async function GetServerSideProps() {
-//   const userData = await fetch('https://jsonplaceholder.typicode.com/users/1/posts/')
-//   const userJSON = await userData.json()
-
-//   return {
-//     props: {
-//       posts: userJSON
-//     }
-//   }
-// }
-
-// async function getData() {
-//   // "use server";
-
-//   // const res = await fetch(`https://dummyjson.com/posts/`).then(res => res.json())
-//   // .then(console.log);
-
-//   const res = await fetch(
-//     "https://dummyjson.com/posts?limit=10"
-//   );
-//   const data= await res.json();
-
-//   const {posts}=data
-
-//   console.log(posts)
-// }
-
 export default function Page() {
-
-
   const data = useAppSelector((state) => state.Post.data);
 
   const info = useAppSelector((state) => state.Post.info);
@@ -60,42 +29,9 @@ export default function Page() {
   const truncateString = (str: string, num: number) =>
     str.length > num ? str.slice(0, num) : str;
 
-
-  // useEffect(()=>{
-  //   data
-  // }
-  // ,[data,info])
-
-  // const data=posts
-
-  //     const res = await fetch(`https://dummyjson.com/posts/`).then(res => res.json())
-  //   .then(console.log);
-
-  // let data=res["posts"]
-
-  // let postArray: [] = await getData()
-
-  // fetch("https://dummyjson.com/products")
-  // .then((res) => res.json())
-  // .then((json) => console.log(json));
-  //   let data = async () => {
-  //     const res = await fetch(`https://dummyjson.com/products/1`);
-  //     const x= await res.json();
-
-  //     return x
-
-  //   };
-
-  // console.log(postArray);
-
   return (
     <div className="flex gap-5 mx-10">
-
       <Search />
-  
-
-
-
 
       <div className="grid grid-cols-3 gap-5 my-5 mx-auto w-3/4 rounded-2xl">
         {Object.values(info).length > 0
@@ -120,7 +56,7 @@ export default function Page() {
 
                   <div className="flex flex-col items-center justify-between">
                     <span className="text-xl font-bold text-gray-900 dark:text-white my-2 text-center ">
-                    {truncateString(PostItem.body,30)}...
+                      {truncateString(PostItem.body, 30)}...
                     </span>
                   </div>
                 </div>
@@ -147,7 +83,7 @@ export default function Page() {
 
                   <div className="flex flex-col items-center justify-between">
                     <span className="text-xl font-bold text-gray-900 dark:text-white my-2 text-center">
-                    {truncateString(PostItem.body,30)}...
+                      {truncateString(PostItem.body, 30)}...
                     </span>
                   </div>
                 </div>
