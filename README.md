@@ -1,5 +1,23 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+## Prerequisite
+
+```bash
+
+
+npm install @reduxjs/toolkit react-redux
+
+npm i react-slider
+
+npm i type /  react slider 
+
+npm i sass
+
+```
+
+
+
 ## Getting Started
 
 First, run the development server:
