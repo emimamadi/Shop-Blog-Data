@@ -14,7 +14,12 @@ export default function postDetail({ params }: { params: { id: number } }) {
 
   return (
     <div className="mt-5">
-      <Link href="../post" className="btn bg-yellow-200 px-5 text-center mt-10 ml-10 rounded-2xl p-4">BACK</Link> 
+      <Link
+        href="../post"
+        className="btn bg-yellow-200 px-5 text-center mt-10 ml-10 rounded-2xl p-4"
+      >
+        BACK
+      </Link>
       {po.map((x) => (
         <div className="flex-col justify-center w-3/4 bg-blue-500 min-h-min shadow-xl rounded-2xl mx-auto my-10 py-10">
           <h3 className="text-black text-center text-2xl font-bold">POST </h3>
@@ -25,10 +30,9 @@ export default function postDetail({ params }: { params: { id: number } }) {
             {x.body}
           </p>
           <div className="flex justify-center mx-auto bg-blue-800 w-2/3 rounded-xl">
-        <span className="flex  text-white pt-3">Tags  :</span>    {x.tags.map((y) => (
-              <span className=" flex  text-center text-white   p-3  ">
-                {y} 
-              </span>
+            <span className="flex  text-white pt-3">Tags :</span>{" "}
+            {x.tags.map((y) => (
+              <span className=" flex  text-center text-white   p-3  ">{y}</span>
             ))}
           </div>
         </div>
