@@ -7,7 +7,7 @@ import ReduxProvider from "@/redux/Provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "BLOG * PRODUCT * DATA",
+  title: "BLOG    *    PRODUCT   *    DATA",
   description: "BLOG * PRODUCT * DATA",
 };
 
