@@ -6,7 +6,7 @@ import { Carousel } from "flowbite-react";
 
 export default function caro() {
   return (
-    <div className="h-2/4 sm:h-64 xl:h-80 2xl:h-96 my-10">
+    <div className="h-auto sm:h-screen  my-14 mx-5">
       <Carousel >
         <img
           src="https://flowbite.com/docs/images/carousel/carousel-1.svg"

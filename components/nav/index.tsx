@@ -51,7 +51,7 @@ export default function index() {
           alt="Flowbite React Logo"
         />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-          Soroush
+          Soroush...
         </span>
       </Navbar.Brand>
       <div className="flex md:order-2 relative">
@@ -101,7 +101,7 @@ export default function index() {
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse>
-        <Navbar.Link href="#" active>
+        <Navbar.Link href="/" active>
           Home
         </Navbar.Link>
         {/* <Navbar.Link href="/shop">Shop</Navbar.Link> */}

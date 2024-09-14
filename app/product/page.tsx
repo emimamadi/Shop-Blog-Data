@@ -187,7 +187,7 @@ export default function page() {
                   </div>
                 </div>
               ));
-            } else {
+            }if((Object.values(data).length < 1) && (Object.values(issues).length < 1) ) {
               return (
                 <div
                   className="flex justify-center items-center min-h-screen w-full"

@@ -14,6 +14,8 @@ npm i type /  react slider
 
 npm i sass
 
+npm i react-bootstrap-icons
+
 ```
 
 
