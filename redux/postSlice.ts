@@ -34,13 +34,9 @@ export const postSlice = createSlice({
       console.log("state.data = ", state.data);
       console.log(action.payload);
 
-      state.info = [
-        ...state.data
-          .filter((item: any) =>
-            item.title.toLowerCase().includes(action.payload)
-          )
-          .map((x: any) => x),
-      ];
+      state.info = state.data.filter((item: any) =>
+        item.title.includes(action.payload)
+      );
     },
 
     categoryPost: (state, action: PayloadAction<string[]>) => {
@@ -51,9 +47,8 @@ export const postSlice = createSlice({
       ];
     },
   },
-
 });
 
-export const {  searchPost , categoryPost } = postSlice.actions;
+export const { searchPost, categoryPost } = postSlice.actions;
 
 export const postReducer = postSlice.reducer;

@@ -30,15 +30,15 @@ const ProductDetails = ({
   return (
     <>
       <div
-        className="md:flex md:flex-row gap-5 mt-10 mx-20 sm:flex sm:flex-col"
+        className="flex-col gap-5 mt-10 mx-20 md:flex md:flex-row  "
         key={id}
       >
         <img
-          className="h-[75vh] w-1/2  shadow-2xl rounded-3xl"
-          src={item?.images[0]}
+          className="h-auto w-full md:h-[75vh] md:w-1/2  shadow-2xl rounded-3xl"
+          src={item?.image}
         />
 
-        <div className="flex flex-col items-center  h-[75vh] w-1/2 py-20 px-5 border-gray-400 shadow-2xl rounded-3xl shadow-gray-400 ">
+        <div className="flex flex-col items-center h-auto w-full md:w-1/2 py-20 px-5 border-gray-400 shadow-2xl rounded-3xl shadow-gray-400  ">
           <h1 className="font-extrabold my-2 py-2 border-b-slate-500 shadow-2xl rounded-xl px-5 bg-slate-400">
             Title : {item?.title}
           </h1>

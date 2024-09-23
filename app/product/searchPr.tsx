@@ -21,7 +21,7 @@ const MAX = 2000;
 export default function SearchFilter() {
   const [values, setValues] = useState([MIN, MAX]);
 
-  const category = ["beauty", "furniture", "fragrances"];
+  const category = ["men's clothing","women's clothing", "jewelery", "electronics"];
 
   // const handleChange = (values: any) => setValues(values);
 

@@ -62,11 +62,11 @@ export default function page() {
   }, []);
 
   return (
-    <div className="flex  mx-5">
+    <div className="flex-col md:flex md:flex-row mx-5">
       <SearchFilter />
 
       {Object.values(data).length > 1 ? (
-        <div className="xl:grid xl:grid-cols-4 md:grid md:grid-cols-2 gap-4 my-5 mx-2">
+        <div className="xl:grid xl:grid-cols-4 md:grid md:grid-cols-2 grid-cols-1 gap-4 my-5 mx-2">
           {(() => {
             if ((Object.values(issues).length > 0)&&(issues)) {
               return Object.values(issues).map((ProductItem: any) => (
@@ -77,7 +77,7 @@ export default function page() {
                   <Link href={`/product/${ProductItem.id}`}>
                     <img
                       className="p-8 rounded-t-lg w-60 h-60 mx-auto"
-                      src={ProductItem.images[0]}
+                      src={ProductItem.image}
                       alt="product image"
                     />
                   </Link>
