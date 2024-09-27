@@ -21,7 +21,7 @@ const MAX = 2000;
 export default function SearchFilter() {
   const [values, setValues] = useState([MIN, MAX]);
 
-  const category = ["men's clothing","women's clothing", "jewelery", "electronics"];
+  const category = ["All","men's clothing","women's clothing", "jewelery", "electronics"];
 
   // const handleChange = (values: any) => setValues(values);
 
@@ -86,6 +86,8 @@ export default function SearchFilter() {
 
           <article className="px-4 pb-4">
             <ul className="flex flex-col gap-1 pl-2">
+
+              {/* <li><input type="radio" />All</li> */}
               {category.map((item, index) => (
                 <li key={index}>
                   <input

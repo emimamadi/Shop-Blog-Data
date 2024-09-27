@@ -31,10 +31,8 @@ const productSlice = createSlice({
     category: [""],
   },
   reducers: {
-
-    getProducts:(state)=>{
-
-      state.issues=state.data
+    getProducts: (state) => {
+      state.issues = state.data;
     },
 
     searchProduct: (state, action: PayloadAction<string[]>) => {
@@ -56,29 +54,46 @@ const productSlice = createSlice({
         (item: any) =>
           action.payload[0] < item.price && item.price < action.payload[1]
       );
-
-     
     },
 
     categoryProduct: (state, action: PayloadAction<string[]>) => {
       console.log(action.payload);
 
-      action.payload[0]
-        ? state.category.push(action.payload[1])
+      // action.payload[0]
+      //   ? state.category.push(action.payload[1])
+      //   : (state.category = state.category.filter(
+      //       (x) => x !== action.payload[1]
+      //     ));
+
+       action.payload[0]
+        ? state.category.push(action.payload[1]) 
         : (state.category = state.category.filter(
             (x) => x !== action.payload[1]
           ));
 
-      state.issues = [
-        ...state.data.filter((item: any) =>
-          state.category.includes(item.category)
-        ),
-      ];
+      console.log("State. category == > ", Object.values(state.category));
+
+      if (state.category.includes("All")) {
+        state.issues = state.data;
+        // state.category=state.category.filter((x)=>x !== "All")
+      } else {
+        state.issues = [
+          ...state.data.filter((item: any) =>
+            state.category.includes(item.category)
+          ),
+        ];
+      }
+
+      // state.issues = [
+      //   ...state.data.filter((item: any) =>
+      //     state.category.includes(item.category)
+      //   ),
+      // ];
     },
   },
 });
 
-export const { priceProduct, searchProduct, categoryProduct,getProducts } =
+export const { priceProduct, searchProduct, categoryProduct, getProducts } =
   productSlice.actions;
 
 export default productSlice.reducer;
